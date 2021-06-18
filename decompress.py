@@ -2,7 +2,7 @@ import pyzipper as pz
 
 dictionary = open('listado-general.txt', 'r')
 outcome = open('pass.txt', 'w')
-compressed = pz.AESZipFile('tarea.zip', 'r' , compression=pz.ZIP_LZMA, encryption=pz.WZ_AES)
+compressed = pz.AESZipFile('respaldo.zip', 'r' , compression=pz.ZIP_LZMA, encryption=pz.WZ_AES)
 
 for line in dictionary:
     try:
