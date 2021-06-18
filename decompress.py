@@ -9,7 +9,7 @@ for line in dictionary:
         password = line.strip('\n')
         pl = line
         password = password.encode("utf-8")
-        data = compressed.extract('secreto.txt', pwd=password)
+        data = compressed.extract('respaldo.txt', pwd=password)
         outcome.write(pl)
         outcome.close()
         break
