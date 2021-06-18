@@ -1,20 +1,21 @@
 import pyzipper as pz 
 
-diccionario = open('listado-general.txt', 'r')
-resultado = open('pass.txt', 'w')
-comprimido = pz.AESZipFile('tarea.zip', 'r' , compression=pz.ZIP_LZMA, encryption=pz.WZ_AES)
+dictionary = open('listado-general.txt', 'r')
+outcome = open('pass.txt', 'w')
+compressed = pz.AESZipFile('tarea.zip', 'r' , compression=pz.ZIP_LZMA, encryption=pz.WZ_AES)
 
-for linea in diccionario:
+for line in dictionary:
     try:
-        password = linea.strip('\n')
-        pl = linea
+        password = line.strip('\n')
+        pl = line
         password = password.encode("utf-8")
-        datos = comprimido.extract('secreto.txt', pwd=password)
-        resultado.write(pl)
-        resultado.close()
+        data = compressed.extract('secreto.txt', pwd=password)
+        outcome.write(pl)
+        outcome.close()
         break
     except: 
         pass
+
 
 
 
